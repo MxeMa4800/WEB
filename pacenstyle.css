@@ -1,0 +1,282 @@
+* {
+    /* background-color: white; */
+    padding: 0;
+    margin: 0;
+    font-family: 'Courier New', monospace;
+}
+* a {
+    text-decoration: none;
+}
+* li {
+    list-style: none;
+  }
+/* Section 1 */
+nav {
+    /* padding: 0.5rem 0.5rem; */
+    background-color: #ffd166;
+    display:flex ;
+    justify-content: space-between;
+}
+nav .tab .Logo1 {
+    /* background-color: white; */
+    /* top right bottom left */
+    margin: 0.5rem 0 0.1rem 0.5rem;
+    width: 3rem !important;
+    height: auto;
+}
+nav .tab .Logo2 {
+    /* background-color: white; */
+    margin: 0.5rem 0 0.5rem 0;
+    width: 8rem !important;
+    height: auto;
+}
+nav .tab .Logo3 {
+    /* background-color: white; */
+    margin: 0.5rem 0 0.5rem 0;
+    width: 9rem !important;
+    height: auto;
+}
+
+.menu-bar {
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+}
+.menu {
+    display: flex;
+    align-items: center;
+}
+.menu li {
+    margin: 1rem;
+}
+.menu li a {
+    color: black;
+}
+
+/* Sention 2 */
+.stream {
+    display:flex ;
+    background-color: aquamarine;
+}
+.stream-box {
+    /* top right bottom left */
+    padding: 1.5rem 1rem 1rem 2rem ;
+    width: 60%;
+    /* background-color: #ffffff; */
+}
+.video1 {
+    /* padding: 1rem; */
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 7px
+}
+.Youtube {
+    /* padding: 1rem; */
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 7px
+}
+
+.select-box {
+    
+    /* margin: 1rem; */
+    background-color: #e1e7e9;
+    border-radius: 7px;
+    /* top right bottom left */
+    margin: 1.5rem 2rem 1rem 0;
+    width: 40%;
+}
+
+.button-box {
+    margin: 1rem 1rem;
+    /* padding:1rem; */
+    /* width: 100%; */
+    /* padding: 1rem 3rem 1rem 3rem; */
+    /* border-radius: 7px; */
+    /* background-color: rgb(255, 255, 255);/// */
+}
+
+.button {
+    border: none;
+    color: rgb(0, 0, 0);
+    /* padding: 20px 60px; */
+    /* margin: 0 10px; */
+    /* margin: 0.5rem 0; */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    /* margin ภายนอกกรอบ */
+    /* margin: 4px 15px; */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 12px;
+    background-color: #cddce3;
+}
+.button1 {
+    /* background-color: white;  */
+    padding: 20px 60px;
+    color: black; 
+    border: 2px solid #000000;
+    /* border-radius: 7px; */
+}
+.button1:hover {
+    background-color: #dae7e7;
+    color: rgb(0, 0, 0);
+}
+
+.button2 {
+    /* background-color: white;  */
+    padding: 20px 60px;
+    margin: 0.5rem 0;
+    color: black; 
+    border: 2px solid #000000;
+    /* border-radius: 7px; */
+}
+i {
+    /* font-size: 1.5rem; */
+    margin-right: 0.5rem;
+}
+.button2:hover {
+    background-color: #dae7e7;
+    color: rgb(0, 0, 0);
+}
+
+.button3 {
+    /* background-color: white;  */
+    padding: 20px 60px;
+    color: black; 
+    border: 2px solid #000000;
+    /* border-radius: 7px; */
+}
+.button3:hover {
+    background-color: #dae7e7;
+    color: rgb(0, 0, 0);
+}
+
+/* Section 3 Taxt Bar*/
+.Eventlog {
+    /* display:flex ; */
+    /* background-color: #467dc9; */
+    width: 100%;
+}
+.box-event {
+    background-color: #e1e7e9;
+    /* width: 100%; */
+    border-radius: 7px;
+    margin: 0 2rem;
+}
+
+.bar-even {
+    display:flex ;
+    /* background-color: #ffd166; */
+    width: 100%;
+}
+.name-box {
+
+    /* display: flex; */
+    /* background-color: palevioletred; */
+    width: 80%;
+
+    /* font-size: 16px; */
+}
+.title-three {
+    text-decoration: underline;
+    font-weight: 600;
+    font-size: 22px;
+    /* top right bottom left */
+    padding: 1rem 1rem 0 1rem;
+}
+.search-box {
+    /* display: flex; */
+    /* background-color:seagreen; */
+    width: 20%;
+}
+.log-search {
+    margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+    padding: 0 0.5rem 0 2rem;
+    /* background-color: rgb(255, 255, 255); */
+}
+.search-but {
+    background-color: #073b4c; 
+    padding: 0.3rem 0 0.3rem 0;
+    color: white; 
+    border: 2px solid #000000;
+    border-radius: 12px;
+}
+.search-but:hover {
+    background-color: #dae7e7;
+    color: rgb(0, 0, 0);
+}
+
+/* Section 3 image slide */
+@import "https://unpkg.com/open-props";
+@import "https://unpkg.com/open-props/normalize.min.css";
+
+.img-box {
+    /* background-color: #75bbd2; */
+    margin: 0 1rem;
+}
+
+.media-scroller {
+    --_spacer: 1rem;
+    display: grid;
+    /* ช่องว่างระหว่างไอเทม */
+    gap: var(--_spacer);
+    /* gap: 3rem; */
+    /* กำหนดการไหลของ grid เป็นแนวนอน */
+    grid-auto-flow: column;
+    /* ขนาดคอลัมน์ของแต่ละไอเทม */
+    grid-auto-columns: 13%;
+     /* padding ด้านข้างและด้านล่าง */
+     /* บน ซ้ายขวา ล่าง */
+    padding: 0 0 var(--_spacer);
+    /* padding: 0 3rem 3rem; */
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+}
+
+.media-scroller--with-groups {
+    /* เปลี่ยนขนาดคอลัมน์เป็น 80% */
+  grid-auto-columns: 100%; 
+}
+
+.media-element {
+  display: grid;
+  grid-template-rows: min-content;
+  /* ช่องว่างระหว่าง text image */
+  /* gap: 0.5rem; */
+  /* padding: var(--_spacer); */
+  /* background-color:lightcyan; */
+  /* border-radius: 7px; */
+  /* box-shadow: var(--shadow-2); */
+}
+.title-img {
+    padding: 0.5rem 0 0.2rem;
+    font-size: 16px;
+}
+.date {
+    font-size: 14px;
+}
+
+.media-element > img {
+  border-radius: 7px;
+  inline-size: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.snaps-inline {
+  scroll-snap-type: inline mandatory;
+  scroll-padding-inline: var(--_spacer, 1rem);
+}
+
+.snaps-inline > * {
+  scroll-snap-align: start;
+}
+
+.section-title {
+  padding-inline-start: var(--size-6);
+  margin-block: var(--size-9) var(--size-3);
+}
