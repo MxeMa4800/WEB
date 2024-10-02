@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Upload Confirmation</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="popup-import">
+    <!-- <button class="close-btn">&times;</button> -->
+    <div class="upload-box">
+        <div class="file-drop-area">
+            <div class="icon-text-area">
+                <i class="fa fa-folder-open"></i>
+                <!-- <i class="fas fa-cloud-upload-alt"></i> -->
+                <span>Select file ONNX only</span>
+                <button class="Browse-btn" id="BrowseBtn">Browse file</button>
+            </div>
+            <!-- ID ถูกเรียกใช้ใน javascript -->
+            <input type="file" class="file-input" id="fileInput" accept=".onnx">
+            <!-- <button class="Browse-btn" id="BrowseBtn">Browse file</button> -->
+            <!-- <input type="file" class="file-input" id="fileInput" accept=".onnx"> -->
+        </div>
+          <!-- ID ถูกเรียกใช้ใน javascript -->
+        <div id="fileMessage" class="message"></div>
+    </div>
+  </div>
+
+  <!-- Modal Confirmation -->
+  <div id="uploadModal" class="modal">
+    <div class="modal-content">
+      <!-- <span class="close-button">&times;</span>
+      <p>คุณต้องการอัปโหลดไฟล์นี้หรือไม่?</p> -->
+      <div class="box-confirm">
+        <div class="icon-suscess">
+          <i class="fa-solid fa-circle-check"></i>
+          <span>Suscess model to update</span>
+        </div>
+        <!-- <input type="file" class="file-input" id="fileInput" accept=".onnx"> -->
+      </div>
+      <p id="modalFileName"></p>
+      <button id="cancelBtn" class="btn cancel">Cancel</button>
+      <button id="confirmBtn" class="btn confirmB">Confirm</button>
+      <!-- <button id="cancelBtn" class="btn cancel">Cancel</button> -->
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

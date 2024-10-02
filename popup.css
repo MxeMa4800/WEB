@@ -1,0 +1,436 @@
+
+/* popup roi */
+.popup-ROI {
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 50%;
+    padding: 10px 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px 5px lightgrey;
+    /* เลื่อนป๊อปอัปขึ้นเล็กน้อยจากตำแหน่งเริ่มต้น */
+    margin-top: -25px; 
+    opacity: 0;
+    transition:
+    top 0ms ease-in-out 300ms,
+    opacity 300ms ease-in-out,
+    margin-top 300ms ease-in-out;
+}
+
+.popup-ROI .close-btn {
+    position: absolute;
+    top: 5px;
+    right: 20px;
+    /* ขนาดของปุ่มปิดคือ 20x20 พิกเซล */
+    width: 20px;
+    height: 20px;
+    background: #70badc;
+    color: #000;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.popup-ROI > * {
+    margin: 15px 0px;
+}
+.popup-ROI .ROI-Box {
+    padding: 0 1rem 0 1rem;
+    /* background-color: #073b4c; */
+}
+.ROI-Box .ROI-img {
+    border-radius: 7px;
+    width: 100%;
+    aspect-ratio: 16/9;
+}
+.ROI-btn {
+    /* background-color: #ffd166; */
+    display: flex;
+    justify-content: center; 
+    align-content: center;
+}
+
+.popup-btn {
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 0.5rem;
+    margin: 0.5rem 0.5rem 0 0.5rem;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 12px;
+    background-color: #ffffff;
+    border: 1px solid black;
+    /* border: 2px #000; */
+}
+.Draw-icon ,.trash-icon {
+    margin: 0.1rem;
+    font-size: 20px;
+    background-color: white;
+}
+.check-icon {
+    /* margin: 0.1rem; */
+    font-size: 15px;
+    /* background-color: white; */
+}
+.Confirm {
+    font-size: 14px;
+    background-color: rgb(28, 192, 28);
+    border: none;
+    color: white;
+}
+.popup-btn:hover {
+    background-color: #dae7e7;
+    color: rgb(0, 0, 0);
+}
+body.active-popup {
+    overflow: hidden;
+}
+body.active-popup .container {
+    /* filter: blur(3px); */
+    filter: none;
+    transition: filter 0ms ease-in-out 0ms;
+}
+body.active-popup .popup-ROI {
+    top: 50%;
+    opacity: 1;
+    margin-top: 0;
+    transition:
+    top 0ms ease-in-out 0ms,
+    opacity 300ms ease-in-out,
+    margin-top 300ms ease-in-out;
+}
+
+/* popup Evenlog */
+.popup-Event {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 50%;
+    padding: 10px 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px 5px lightgrey;
+    /* เลื่อนป๊อปอัปขึ้นเล็กน้อยจากตำแหน่งเริ่มต้น */
+    margin-top: -25px; 
+}
+.popup-Event .close-btn {
+    position: absolute;
+    top: 5px;
+    right: 20px;
+    /* ขนาดของปุ่มปิดคือ 20x20 พิกเซล */
+    width: 20px;
+    height: 20px;
+    background: #70badc;
+    color: #000;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.popup-Event > * {
+    margin: 15px 0px;
+}
+.popup-Event .Event-img {
+    padding: 2rem 1rem 0 1rem;
+}
+.Event-img > img {
+    border-radius: 7px;
+    width: 100%;
+    aspect-ratio: 16/9;
+}
+
+/* popup showmore */
+.popup-search {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 450px;
+    height: 550px;
+    padding: 10px 10px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px 5px lightgrey;
+}
+.box-search {
+    margin: 0.5rem;
+    /* background-color: #073b4c; */
+    display: flex;
+    align-items: center;
+}
+.box-search .search-icon{
+    font-size: 20px;
+    /* background-color: #e33c3c; */
+}
+.box-search .download-icon {
+    /* background-color: #e33c3c; */
+    margin-left: 12px;
+    font-size: 25px;
+    cursor: pointer;
+}
+/* .search {
+    width: max-content;
+    align-items: center;
+    padding: 14px;
+    border-radius: 28px;
+    background: #f6f6f6;
+    transition: box-shadow 0.25s;
+}
+.search:focus-within {
+    box-shadow: 0 0 2px rgb(0, 0, 0, 0.75);
+}
+.search-input {
+    width: 300px;
+    font-size: 16px;
+    border-radius: 7px;
+    font-family: 'Lexend',sans-serif;
+    color: #000;
+    margin-left: 5px;
+    margin-right: 5px;
+    outline: none;
+    border: none;
+    background: transparent;
+    flex: 1;
+} */
+input[Type="date"]{
+    position: relative;
+    width: 340px;
+    height: 30px;
+    padding: 0 30px;
+    border: 0;
+    background-color: #f6f6f6;
+    border-radius: 10px;
+    outline: none;
+    font-size: 15px;
+    font-weight: 350px;
+    letter-spacing: 3px;
+    color: #000000;
+    text-transform: uppercase;
+    /* transition: box-shadow 0.25s; */
+
+}
+input[Type="date"]:focus-within {
+    box-shadow: 0 0 2px rgb(0, 0, 0, 0.75);
+}
+.box-search .close-btn {
+    position: absolute;
+    font-size: 20px;
+    top: 10px;
+    right: 10px;
+    /* ขนาดของปุ่มปิดคือ 20x20 พิกเซล */
+    width: 20px;
+    height: 20px;
+    /* background: #70badc; */
+    color: #000;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.search-input::placeholder,.search-icon {
+    color: rgb(0, 0, 0, 0.25);
+}
+.bar-element {
+    display: flex;
+    background: #f6f6f6;
+    border-radius: 7px;
+}
+.bar-element > div {
+    display: flex;
+    flex-grow: 1;
+    align-items: center; /* จัดข้อความให้อยู่กึ่งกลางแนวตั้ง */
+    justify-content: center; /* จัดข้อความให้อยู่กึ่งกลางแนวนอน */
+}
+.showmore-img {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+}
+.popup-slider{
+    scroll-snap-align: start;
+    display: flex;
+    flex-grow: 1;
+    margin: 4px;
+    border-radius: 7px;
+    background: #f6f6f6
+}
+
+.popup-slider > img {
+    width: 30%;
+    border-radius: 7px;
+    aspect-ratio: 16/9;
+}
+.popup-slider .title-img{
+    font-size: 12px;
+    padding:  2rem 1.8rem;
+    /* background-color: #60b757; */
+}
+.popup-slider .date{
+    font-size: 12px;
+    padding:  2rem 0.2rem;
+    /* background-color: #9c8b46; */
+}
+
+/* popup Model */
+.popup-import {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    /* width: 400px; */
+    /* height: 300px; */
+    padding: 10px 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px 5px lightgrey;
+    /* เลื่อนป๊อปอัปขึ้นเล็กน้อยจากตำแหน่งเริ่มต้น */
+    margin-top: -25px; 
+}
+.popup-import .close-btn {
+    position: absolute;
+    top: 5px;
+    right: 20px;
+    /* ขนาดของปุ่มปิดคือ 20x20 พิกเซล */
+    width: 20px;
+    height: 20px;
+    background: #70badc;
+    color: #000;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.popup-import > * {
+    margin: 15px 0px;
+}
+.upload-box {
+    max-width: 28rem;
+    margin: 0 auto;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    /* background-color: pink; */
+}
+.file-drop-area {
+    position: relative;
+    margin: 1.5rem;
+    padding: 1rem;
+    height: 10rem;
+    border-radius: 0.5rem;
+    border: 2px dashed #737b80;
+    /* background-color: #f1f5f9; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.icon-text-area {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.icon-text-area i {
+    margin: 1rem;
+    /* background-color: #70badc; */
+    font-size: 4rem;
+    color: #737b80;
+}
+.icon-text-area span {
+    color: #9ca3af;
+    font-weight: normal;
+}
+.Browse-btn {
+    margin: 1rem 0 0 0;
+    background-color:#70badc;
+    border-radius: 7px;
+    width: 150px;
+    height: 30px;
+    border: none;
+    color: white;
+}
+.file-input {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+.message {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: red;
+    text-align: center;
+}
+
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    /* padding: 10px 20px; */
+    transform: translate(-50%,-50%);
+    /* width: 50%; */
+    /* height: 100%; */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+}
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+}
+.box-confirm {
+    position: relative;
+    /* margin: 1rem ; */
+    height: 10rem;
+    border-radius: 0.5rem;
+    border: 2px dashed #000000;
+    /* background-color: #f1f5f9; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-suscess {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icon-suscess i {
+    font-size: 4rem;
+    color: #19be00;
+}
+
+.icon-suscess span {
+    margin: 1rem 0 0 0;
+    color: #9ca3af;
+    font-weight: normal;
+}
+
+.btn {
+    /* background-color: #9ca3af; */
+    border-radius: 7px;
+    margin: 1px 5px;
+    padding: 6px 30px;
+    cursor: pointer;
+}
+.confirmB {
+    background-color: #1ece26;
+    color: black;
+}
+.cancel {
+    background-color:#cfd9df;
+    color:black;
+}

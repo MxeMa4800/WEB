@@ -71,3 +71,13 @@ document.querySelectorAll(".search-but").forEach(element =>{
 document.querySelector('.box-search .close-btn').onclick = () => {
     document.querySelector(".popup-search").style.display = 'none';
 };
+
+// Popup Import Model
+document.querySelectorAll(".button3").forEach(element =>{
+    element.onclick = () =>{
+        document.querySelector(".popup-import").style.display ='block';
+    }
+});
+document.querySelector('.popup-import .close-btn').onclick = () => {
+    document.querySelector(".popup-import").style.display = 'none';
+};
