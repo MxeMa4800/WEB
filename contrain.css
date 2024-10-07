@@ -39,19 +39,22 @@ nav {
 nav .tab .Logo1 {
     /* top right bottom left */
     margin: 0.5rem 0 0.1rem 1rem;
+    /* box-shadow: 0px 2px 5px 5px lightgrey; */
+    /* filter: drop-shadow(0 4px 2px rgb(67, 67, 67)); */
+    /* filter: 0px 5px 15px 0px rgba(0, 0, 0, 0.35); */
     width: 2.5rem !important;
     height: auto;
 }
 nav .tab .Logo2 {
     /* top right bottom left */
-    margin: 0.5rem 0 0.3rem 0;
-    width: 8rem !important;
+    margin: 0.5rem 0 0.5rem 0;
+    width: 7rem !important;
     height: auto;
 }
 nav .tab .Logo3 {
     /* top right bottom left */
-    margin: 0.5rem 0 0.2rem 0;
-    width: 8rem !important;
+    margin: 0.5rem 0 0.5rem 0;
+    width: 9rem !important;
     height: auto;
 }
 
@@ -68,15 +71,17 @@ nav .tab .Logo3 {
     border-radius: 7px
 }
 .select-box {
+    padding: 1.5rem 1rem;
     grid-area: select-box;
     /* background-color: blueviolet; */
     /* border-radius: 7px; */
 }
 .button-box {
-    margin: 1.5rem 1rem;
+    /* margin: 1.5rem 1rem; */
     /* top right bottom left */
-    padding: 1rem 1rem 1rem;
-    background-color: white;
+    padding: 1rem 1rem;
+    background-color: #e1e7e9;
+    height: 98%;
     border-radius: 7px;
 }
 
@@ -86,16 +91,32 @@ nav .tab .Logo3 {
     text-align: center;
     text-decoration: none;
     display: inline-block;
+    /* box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px; */
+    /* box-shadow: 0px 2px 5px 5px rgb(0, 0, 0); */
     font-size: 16px;
     transition-duration: 0.4s;
     cursor: pointer;
     width: 100%;
     border-radius: 12px;
-    background-color: #cddce3;
+    background-color: #c9dee3;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 .button1 {
     padding: 20px 60px;
+    /* font-size: 18px; */
     color: black; 
+}
+.polygon-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: aqua; */
+    font-size: 20px;
+}
+.polygon-icon > img {
+    /* background-color: #ffd166; */
+    margin: 0 8px 0 0;
+    width: 30px;
 }
 .button1:hover {
     background-color: #dae7e7;
@@ -103,8 +124,8 @@ nav .tab .Logo3 {
 }
 
 .button2 {
-    padding: 20px 60px;
-    margin: 0.5rem 0;
+    padding: 15px 60px;
+    margin: 1rem 0;
     color: black; 
 }
 i {
@@ -116,7 +137,7 @@ i {
 }
 
 .button3 {
-    padding: 20px 60px;
+    padding: 15px 60px;
     color: black; 
 }
 .button3:hover {

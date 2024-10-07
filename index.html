@@ -2,28 +2,46 @@
     <head>
         <title>Pacen Project</title>
         <link rel="stylesheet" href="contrain.css">
-        <link rel="stylesheet" href="popup.css">
+        <link rel="stylesheet" href="popup_import.css">
+        <link rel="stylesheet" href="popup_roi.css">
+        <link rel="stylesheet" href="popup_Event.css">
+        <link rel="stylesheet" href="popup_showmore.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-
+        <link href="https://fonts.google.com/specimen/Roboto+Mono?query=Roboto+Mono" rel="stylesheet"> <!-- นำเข้าฟอนต์ -->
     </head>
     <body>
         <div class="container">
             <div class="nav2"></div>
             <nav>
                 <div class="tab">
-                    <img class="Logo1" src="template/Pacen Logo6.png" alt="Logo" >
-                    <img class="Logo2" src="template/logoPacen2.png" alt="Logo" >
-                    <img class="Logo3" src="template/auto.png" alt="Logo" >
+                    <img class="Logo1" src="/template/logo1.png" alt="Logo" >
+                    <img class="Logo2" src="/template/logo2.png" alt="Logo" >
+                    <img class="Logo3" src="/template/logo3.png" alt="Logo" >
                 </div>
             </nav>
             <div class="stream-box">
-                <video class="video1" controls>
-                    <source src="template/855029-hd_1920_1080_30fps.mp4" type="video/mp4">
+                <video id="myVideo" class="video1" autoplay controls>
+                    <!-- เบราว์เซอร์จะเลือกเล่นฟอร์แมตที่รองรับตามลำดับที่คุณระบุใน <source>. -->
+                    <!-- MP4: รองรับในเกือบทุกเบราว์เซอร์ -->
+                    <!-- WebM: รองรับใน Chrome และ Firefox -->
+                    <!-- Ogg: รองรับใน Firefox และ Opera -->
+                    <!-- ถ้าเบราว์เซอร์รองรับฟอร์แมตของ <source> ตัวแรก มันจะเล่นวิดีโอนั้นเลย. ถ้าไม่รองรับ มันจะไปที่ <source> ตัวถัดไป. -->
+                    <source src="http://192.168.1.216:8080" type="video/ogg; codecs=theora, vorbis">
+                    <source src="http://192.168.1.216:8080" type="video/webm">
+                    <source src="http://192.168.1.216:8080" type="video/mp4">
+                    <source src="http://192.168.1.216:8080" type="video/mjpeg">
+                        Video Disconnect
                 </video>
+                <!-- <video class="video1" src="http://192.168.1.216:8080" autoplay ></video> -->
             </div>
             <div class="select-box">
                 <div class="button-box">
-                    <button class="button button1">ROI</button>
+                    <button class="button button1">
+                        <div class="polygon-icon">
+                            <img src="/template/polygon.png">
+                            <p>ROI</p>
+                        </div>
+                    </button>
                     <button class="button button2"><i class="fa-solid fa-rotate-right"></i>Update url</button>
                     <button class="button button3"><i class="fa-solid fa-file-import"></i>Import Model</button>
                 </div>
@@ -105,10 +123,34 @@
                 <div class="ROI-btn">
                     <button class="popup-btn Drawroi"><i class="Draw-icon fa-solid fa-pen-nib"></i></button>
                     <button class="popup-btn trash"><i class="trash-icon fa-regular fa-trash-can"></i></button>   
-                    <button class="popup-btn Confirm">Confirm</button> 
+                    <button class="popup-btn Confirm"><i class="check-icon fa-regular fa-circle-check"></i>Confirm</button> 
                 </div>
             </div>
         </div>
+          <!-- Confirm ROI -->
+        <div id="uploadROI" class="confirm-roi">
+            <div class="top-Roi">
+                <button class="close-btn">&times;</button>
+                <p>Confirmed ROI</p>
+            <!-- <p>Confirmed Update URLs</p> -->
+            </div>
+            <div class="confirm-content">
+                <button id="cancelR" class="btn cancel-R">Cancel</button>
+                <button id="confirmR" class="btn confirm-R">Confirm</button>
+            </div>
+        </div>
+        <!-- ROI Confirm -->
+        <!-- <div id="uploadROI" class="roi-confirm">
+            <div class="top-Roi">
+            <button class="close-btn">&times;</button>
+            <p>Confirmed ROI</p>
+            </div>
+            <div class="modal-content">
+            <button id="cancelBtn" class="btn cancel">Cancel</button>
+            <button id="confirmBtn" class="btn confirmB">Confirm</button>
+            </div>
+        </div> -->
+        
 
         <div class="popup-Event">
             <button class="close-btn">&times;</button>
@@ -157,47 +199,61 @@
             </div>
         </div>
 
-        <div class="popup-import">
+        <div id="uploadModel"class="popup-import">
             <button class="close-btn">&times;</button>
+            <div class="topic-import">Import Model</div>
+            <!-- show name of current file -->
+            <div class="cur-model">
+                <span>Current Model</span>
+                <span id="Current_mo" class="box-current"></span>
+            </div>
             <div class="upload-box">
                 <div class="file-drop-area">
-                    <div class="icon-text-area">
-                        <i class="fa fa-folder-open"></i>
-                        <!-- <i class="fas fa-cloud-upload-alt"></i> -->
-                        <span>Select file ONNX only</span>
-                        <button class="Browse-btn" id="BrowseBtn">Browse file</button>
-                    </div>
-                    <!-- ID ถูกเรียกใช้ใน javascript -->
-                    <input type="file" class="file-input" id="fileInput" accept=".onnx">
-                    <!-- <button class="Browse-btn" id="BrowseBtn">Browse file</button> -->
-                    <!-- <input type="file" class="file-input" id="fileInput" accept=".onnx"> -->
-                </div>
-                  <!-- ID ถูกเรียกใช้ใน javascript -->
-                <div id="fileMessage" class="message"></div>
+                        <div class="topModel">
+                            <p class="text1">New Model</p>
+                            <!-- <p class="text2">*Selec file .ONNX only</p> -->
+                        </div>
+                        <div class="NewModel">
+                            <form>
+                                <!-- show name of selec file -->
+                                <p id="modelFileName" class="modelfile"></p>
+                                <!-- <input type="file" class="file-input" id="fileInput" accept=".onnx"> -->
+                            </form>
+                        </div>
+                        <button class="Browse-btn" id="BrowseBtn">Browse file 
+                            <input type="file" class="file-input" id="fileInput" accept=".onnx">
+                        </button>
+                        <!-- <div id="fileMessage" class="message"></div> -->
+                        <!-- <input type="file" class="file-input" id="fileInput" accept=".onnx"> -->
+                </div> 
+                <p class="text2">*Selec file .ONNX only</p>
+            </div>
+            <!-- <div id="fileMessage" class="message"></div> -->
+            <div class="reconBTN">
+                <button id="cancelBtn" class="btn cancel">Cancel</button>
+                <button id="confirmBtn" class="btn confirmB">Confirm</button>
             </div>
         </div>
 
         <!-- Modal Confirmation -->
-        <div id="uploadModal" class="modal">
+        <!-- <div id="uploadModal" class="modal">
             <div class="modal-content">
-            <!-- <span class="close-button">&times;</span>
-            <p>คุณต้องการอัปโหลดไฟล์นี้หรือไม่?</p> -->
                 <div class="box-confirm">
                     <div class="icon-suscess">
                         <i class="fa-solid fa-circle-check"></i>
                          <span>Suscess model to update</span>
                     </div>
-                <!-- <input type="file" class="file-input" id="fileInput" accept=".onnx"> -->
                 </div>
                 <p id="modalFileName"></p>
                 <button id="cancelBtn" class="btn cancel">Cancel</button>
-                <button id="confirmBtn" class="btn confirm">Confirm</button>
-            <!-- <button id="cancelBtn" class="btn cancel">Cancel</button> -->
+                <button id="confirmBtn" class="btn confirmB">Confirm</button>
             </div>
-        </div>
+        </div> -->
+        
 
         <script src="contrain.js"></script> <!-- เชื่อมโยงไฟล์ JavaScript -->
         <script src="importModel.js"></script>
+        <script src="updatrROI.js"></script>
         <!-- <script src="test_web/script.js"></script> -->
     </body>
 </html>

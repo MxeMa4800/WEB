@@ -1,0 +1,132 @@
+/* popup showmore */
+.popup-search {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 450px;
+    height: 550px;
+    padding: 10px 10px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px 5px lightgrey;
+}
+.box-search {
+    margin: 0.5rem;
+    /* background-color: #073b4c; */
+    display: flex;
+    align-items: center;
+}
+.box-search .search-icon{
+    font-size: 20px;
+    /* background-color: #e33c3c; */
+}
+.box-search .download-icon {
+    /* background-color: #e33c3c; */
+    margin-left: 12px;
+    font-size: 25px;
+    cursor: pointer;
+}
+/* .search {
+    width: max-content;
+    align-items: center;
+    padding: 14px;
+    border-radius: 28px;
+    background: #f6f6f6;
+    transition: box-shadow 0.25s;
+}
+.search:focus-within {
+    box-shadow: 0 0 2px rgb(0, 0, 0, 0.75);
+}
+.search-input {
+    width: 300px;
+    font-size: 16px;
+    border-radius: 7px;
+    font-family: 'Lexend',sans-serif;
+    color: #000;
+    margin-left: 5px;
+    margin-right: 5px;
+    outline: none;
+    border: none;
+    background: transparent;
+    flex: 1;
+} */
+input[Type="date"]{
+    position: relative;
+    width: 340px;
+    height: 30px;
+    padding: 0 30px;
+    border: 0;
+    background-color: #f6f6f6;
+    border-radius: 10px;
+    outline: none;
+    font-size: 15px;
+    font-weight: 350px;
+    letter-spacing: 3px;
+    color: #000000;
+    text-transform: uppercase;
+    /* transition: box-shadow 0.25s; */
+
+}
+input[Type="date"]:focus-within {
+    box-shadow: 0 0 2px rgb(0, 0, 0, 0.75);
+}
+.box-search .close-btn {
+    position: absolute;
+    font-size: 20px;
+    top: 10px;
+    right: 10px;
+    /* ขนาดของปุ่มปิดคือ 20x20 พิกเซล */
+    width: 20px;
+    height: 20px;
+    /* background: #70badc; */
+    color: #000;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.search-input::placeholder,.search-icon {
+    color: rgb(0, 0, 0, 0.25);
+}
+.bar-element {
+    display: flex;
+    background: #f6f6f6;
+    border-radius: 7px;
+}
+.bar-element > div {
+    display: flex;
+    flex-grow: 1;
+    align-items: center; /* จัดข้อความให้อยู่กึ่งกลางแนวตั้ง */
+    justify-content: center; /* จัดข้อความให้อยู่กึ่งกลางแนวนอน */
+}
+.showmore-img {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+}
+.popup-slider{
+    scroll-snap-align: start;
+    display: flex;
+    flex-grow: 1;
+    margin: 4px;
+    border-radius: 7px;
+    background: #f6f6f6
+}
+
+.popup-slider > img {
+    width: 30%;
+    border-radius: 7px;
+    aspect-ratio: 16/9;
+}
+.popup-slider .title-img{
+    font-size: 12px;
+    padding:  2rem 1.8rem;
+    /* background-color: #60b757; */
+}
+.popup-slider .date{
+    font-size: 12px;
+    padding:  2rem 0.2rem;
+    /* background-color: #9c8b46; */
+}

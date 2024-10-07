@@ -1,6 +1,6 @@
 // ดึง input และ message div
-const fileInput = document.getElementById('fileInput');
-const fileMessage = document.getElementById('fileMessage');
+// const fileInput = document.getElementById('fileInput');
+// const fileMessage = document.getElementById('fileMessage');
 const modal = document.getElementById('uploadModal');
 const modalFileName = document.getElementById('modalFileName');
 const closeModalButton = document.querySelector('.close-button');

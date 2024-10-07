@@ -1,0 +1,195 @@
+
+/* popup roi */
+.popup-ROI {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 50%;
+    padding: 10px 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px 5px lightgrey;
+    /* เลื่อนป๊อปอัปขึ้นเล็กน้อยจากตำแหน่งเริ่มต้น */
+    /* margin-top: -25px;  */
+    /* opacity: 0; */ 
+    /* transition:
+    top 0ms ease-in-out 300ms,
+    opacity 300ms ease-in-out,
+    margin-top 300ms ease-in-out; */
+}
+.popup-ROI > h2 {
+    /* background-color: #1ece26; */
+    display: flex;
+    text-decoration: underline;
+    justify-content: center;
+}
+.popup-ROI .close-btn {
+    position: absolute;
+    top: 5px;
+    right: 20px;
+    /* ขนาดของปุ่มปิดคือ 20x20 พิกเซล */
+    width: 20px;
+    height: 20px;
+    background: #70badc;
+    color: #000;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.popup-ROI > * {
+    margin: 15px 0px;
+}
+.popup-ROI .ROI-Box {
+    padding: 0 1rem 0 1rem;
+    /* background-color: #073b4c; */
+}
+.ROI-Box .ROI-img {
+    border-radius: 7px;
+    width: 100%;
+    aspect-ratio: 16/9;
+}
+.ROI-btn {
+    background-color: #ffd166;
+    display: flex;
+    justify-content: center;
+    /* justify-content: space-between; */
+    /* justify-content: center;  */
+    /* align-content: center; */
+    /* position: relative; */
+}
+.popup-btn {
+    border: none;
+    /* margin-right: 10px; */
+    color: rgb(0, 0, 0);
+    padding: 0.5rem;
+    margin: 0.5rem 0.5rem 0 0.5rem;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 12px;
+    background-color: #ffffff;
+    border: 1px solid black;
+    /* justify-content: center;  */
+    /* align-content: center; */
+    /* border: 2px #000; */
+}
+.Draw-icon ,.trash-icon {
+    margin: 0.1rem;
+    font-size: 20px;
+    /* background-color: white; */
+}
+.check-icon {
+    font-size: 16px;
+    /* background-color: white; */
+}
+/* .Drawroi , .trash { */
+    /* margin-right: 10px; */
+    /* margin-bottom: auto; */
+    /* margin: auto; */
+    /* justify-content: center; */
+    /* align-content: center; */
+/* } */
+.Confirm {
+    font-size: 14px;
+    background-color: rgb(28, 192, 28);
+    border: none;
+    color: white;
+    /* justify-content: flex-end; */
+    /* margin-left: auto; */
+    /* margin-right: 10px; */
+
+}
+.popup-btn:hover {
+    background-color: #dae7e7;
+    color: rgb(0, 0, 0);
+}
+/* body.active-popup {
+    overflow: hidden;
+}
+body.active-popup .container {
+    filter: blur(3px);
+    filter: none;
+    transition: filter 0ms ease-in-out 0ms;
+}
+body.active-popup .popup-ROI {
+    top: 50%;
+    opacity: 1;
+    margin-top: 0;
+    transition:
+    top 0ms ease-in-out 0ms,
+    opacity 300ms ease-in-out,
+    margin-top 300ms ease-in-out;
+} */
+
+/* Modal Styles */
+.confirm-roi {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    /* right: 50%; */
+    border-radius: 7px;
+    transform: translate(-50%,-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 2px 5px 5px lightgrey;
+}
+.top-Roi .close-btn {
+    position: absolute;
+    font-size: 20px;
+    top: 10px;
+    right: 10px;
+    /* height: 100px; */
+    color: #000;
+    border: none;
+    outline: none;
+    background-color: #f18d39;
+    /* border-radius: 50%; */
+    cursor: pointer;
+}
+.confirm-content {
+    background-color: white;
+    padding: 20px;
+    /* border-radius: 7px; */
+    text-align: center;
+    width: 300px;
+    border-bottom-right-radius: 7px;
+    border-bottom-left-radius: 7px;
+}
+.top-Roi {
+    position: relative;
+    background-color: #f18d39;
+    border-top-left-radius:7px;
+    border-top-right-radius: 7px;
+    height: 50px;
+    /* width: 200px; */
+    /* margin: 1rem ; */
+    /* height: 10rem; */
+    /* border-radius: 0.5rem; */
+    /* border: 2px dashed #000000; */
+    /* background-color: #f1f5f9; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn {
+    /* background-color: #9ca3af; */
+    border-radius: 7px;
+    margin: 1px 5px;
+    padding: 6px 30px;
+    cursor: pointer;
+}
+.confirm-R {
+    background-color: #1ece26;
+    color: white;
+}
+
+.cancel-R {
+    background-color:#cfd9df;
+    color:black;
+}
+

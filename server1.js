@@ -31,7 +31,7 @@ app.use('/uploads', express.static('uploads'));
 
 // เสิร์ฟหน้า HTML สำหรับการแสดงรูป
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'test.html'));
+  res.sendFile(path.join(__dirname, 'test_web/test.html'));
 });
 
 app.listen(port, () => {

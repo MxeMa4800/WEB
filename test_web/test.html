@@ -7,9 +7,28 @@
 </head>
 <body>
   <h1>Upload Image via Postman</h1>
-  <form action="/upload" method="POST" enctype="multipart/form-data">
+  <!-- <form action="/upload" method="POST" enctype="multipart/form-data">
     <input type="file" name="image">
     <button type="submit">Upload</button>
-  </form>
+  </form> -->
+  <video src="http://192.168.1.216:8080" autoplay width="640" height="480"></video>
+  <video id="myVideo" class="video1" autoplay controls width="640" height="480">
+    <!-- เบราว์เซอร์จะเลือกเล่นฟอร์แมตที่รองรับตามลำดับที่คุณระบุใน <source>. -->
+    <!-- MP4: รองรับในเกือบทุกเบราว์เซอร์ -->
+    <!-- WebM: รองรับใน Chrome และ Firefox -->
+    <!-- Ogg: รองรับใน Firefox และ Opera -->
+    <!-- ถ้าเบราว์เซอร์รองรับฟอร์แมตของ <source> ตัวแรก มันจะเล่นวิดีโอนั้นเลย. ถ้าไม่รองรับ มันจะไปที่ <source> ตัวถัดไป. -->
+    <source src="http://192.168.1.216:8080" type="video/ogg; codecs=theora, vorbis">
+    <source src="http://192.168.1.216:8080" type="video/webm">
+    <source src="http://192.168.1.216:8080" type="video/mp4">
+    <source src="http://192.168.1.216:8080" type="video/mjpeg">
+        Video Disconnect
+    </video>
+    <!-- <video width="640" height="480" controls> 
+      <source src="rtsp://admin:_Pacen888@192.168.1.65:554/streaming/Channels/101" type="application/x-rtsp"> 
+      <source src="video.mp4" type="video/mp4"> 
+      <source src="video.webm" type="video/webm"> 
+      Your browser does not support the video tag. 
+    </video>  -->
 </body>
 </html>

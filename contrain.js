@@ -1,10 +1,15 @@
+// document: ตัวแปรนี้อ้างถึงเอกสาร HTML ทั้งหมดที่กำลังโหลดในเบราว์เซอร์
+// querySelector(): ใช้เพื่อเลือกองค์ประกอบแรกที่ตรงกับตัวเลือก CSS ที่ระบุในวงเล็บ เช่น คลาส (.class-name), ไอดี (#id-name), หรือแท็ก (tag-name)
 const scroller = document.querySelector('.media-scroller');
 let isDown = false; // ตัวแปรสำหรับตรวจสอบสถานะการกด
 let startX; // ตำแหน่งเริ่มต้นของเมาส์
 let scrollLeft; // ตำแหน่งเริ่มต้นของ scroller
-
+// var สามารถประกาศทับได้
+// let อัพเดทค่าได้
+// const ค่าคงที่
 
 // addEventListener('mousedown', ...) เป็นการตรวจจับว่าเมาส์ถูกกดที่ scroller หรือไม่ (mousedown คือ event ที่เกิดขึ้นเมื่อเรากดปุ่มเมาส์)
+// e เป็นการอ้างอิงถึงวัตถุเหตุการณ์ (event object) ซึ่งเก็บข้อมูลเกี่ยวกับเหตุการณ์นั้น เช่น ตำแหน่งของเมาส์, ปุ่มเมาส์ที่ถูกกด, หรือข้อมูลอื่น ๆ ที่เกี่ยวข้อง.
 scroller.addEventListener('mousedown', (e) => {
     isDown = true; // ตั้งค่าตัวแปรว่าเมาส์ถูกกด
     scroller.classList.add('active'); // เพิ่มคลาส active เพื่อเปลี่ยนเคอร์เซอร์
@@ -23,7 +28,7 @@ scroller.addEventListener('mouseleave', () => {
 scroller.addEventListener('mouseup', () => {
     isDown = false; // เมาส์ถูกปล่อย
     scroller.classList.remove('active'); // ลบคลาส active
-});
+}); 
 
 scroller.addEventListener('mousemove', (e) => {
     if (!isDown) return; // ถ้าไม่ได้กดเมาส์ไม่ต้องทำอะไร
@@ -35,12 +40,24 @@ scroller.addEventListener('mousemove', (e) => {
 
 
 // Popup ROI
-document.querySelector(".button1").addEventListener("click",function(){
-    document.body.classList.add("active-popup");
+// addEventListener("click", function() {...}) ใช้เพื่อเพิ่มฟังก์ชันที่ทำงานเมื่อผู้ใช้คลิกที่ปุ่มนี้
+// document.querySelector(".button1").addEventListener("click",function(){
+//     document.body.classList.add("active-popup");
+// });
+// document.querySelector(".popup-ROI .close-btn").addEventListener("click",function(){
+//     document.body.classList.remove("active-popup");
+// });
+
+// Popup  ROI
+document.querySelectorAll(".button1").forEach(element =>{
+    element.onclick = () =>{
+        document.querySelector(".popup-ROI ").style.display ='block';
+    }
 });
-document.querySelector(".popup-ROI .close-btn").addEventListener("click",function(){
-    document.body.classList.remove("active-popup");
-});
+document.querySelector('.popup-ROI .close-btn').onclick = () => {
+    document.querySelector(".popup-ROI").style.display = 'none';
+};
+
 
 // Popup Event
 document.querySelectorAll(".media-element img").forEach(element =>{
@@ -72,12 +89,10 @@ document.querySelector('.box-search .close-btn').onclick = () => {
     document.querySelector(".popup-search").style.display = 'none';
 };
 
-// Popup Import Model
-document.querySelectorAll(".button3").forEach(element =>{
-    element.onclick = () =>{
-        document.querySelector(".popup-import").style.display ='block';
-    }
-});
-document.querySelector('.popup-import .close-btn').onclick = () => {
-    document.querySelector(".popup-import").style.display = 'none';
-};
+
+// const video = document.querySelector('.video1');
+// video.addEventListener('error', () => {
+//     console.error('Error playing video. Attempting to reload.');
+//     video.load();
+//     video.play();
+// });

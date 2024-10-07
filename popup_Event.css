@@ -1,0 +1,40 @@
+/* popup Evenlog */
+.popup-Event {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 50%;
+    padding: 10px 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px 5px lightgrey;
+    /* เลื่อนป๊อปอัปขึ้นเล็กน้อยจากตำแหน่งเริ่มต้น */
+    margin-top: -25px; 
+}
+.popup-Event .close-btn {
+    position: absolute;
+    top: 5px;
+    right: 20px;
+    /* ขนาดของปุ่มปิดคือ 20x20 พิกเซล */
+    width: 20px;
+    height: 20px;
+    background: #70badc;
+    color: #000;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.popup-Event > * {
+    margin: 15px 0px;
+}
+.popup-Event .Event-img {
+    padding: 2rem 1rem 0 1rem;
+}
+.Event-img > img {
+    border-radius: 7px;
+    width: 100%;
+    aspect-ratio: 16/9;
+}
